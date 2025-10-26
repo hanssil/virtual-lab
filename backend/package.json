@@ -1,0 +1,16 @@
+{
+  "name": "virtual-lab-backend",
+  "version": "1.0.0",
+  "description": "Simple REST API for Virtual Lab quiz results",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase-admin": "^13.5.0"
+  }
+}

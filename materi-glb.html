@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi: Gerak Lurus - Virtual Lab Fisika</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    
+    <header class="main-header">
+        <div class="logo">Virtual Lab Fisika</div>
+        <div class="user-info">
+          <span id="userEmail" style="margin-right: 15px; color: #555;"></span>
+          <button id="logoutButton" class="logout-button">Logout</button>
+        </div>
+    </header>
+
+    <nav class="secondary-nav">
+        <a href="topic-list.html?fitur=materi" class="back-link">&larr; Pilih Topik Lain</a>
+        <span class="page-title">Materi Pembelajaran / Gerak Lurus</span> </nav>
+
+    <main class="materi-main-container">
+
+        <section class="materi-section pengantar">
+            <h4><i class="icon-buku"></i> Pengantar</h4>
+            <p>
+                Gerak lurus adalah gerak suatu benda pada lintasan garis lurus. Gerak lurus dibagi menjadi dua jenis: Gerak Lurus Beraturan (GLB) dan Gerak Lurus Berubah Beraturan (GLBB).
+            </p>
+        </section>
+
+        <section class="materi-section konsep-utama">
+            <h4><i class="icon-konsep"></i> Konsep Utama</h4>
+
+            <article class="sub-seksi">
+                <h3>Gerak Lurus Beraturan (GLB)</h3>
+                <p>
+                    GLB adalah gerak benda pada lintasan lurus dengan kecepatan tetap (konstan). Pada GLB, tidak ada percepatan.
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ s = v \times t $$
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Gerak Lurus Berubah Beraturan (GLBB)</h3>
+                <p>
+                    GLBB adalah gerak benda pada lintasan lurus dengan percepatan tetap (konstan). Kecepatan benda berubah secara teratur.
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ s = v_0 t + \frac{1}{2} a t^2 $$
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Kecepatan pada GLBB</h3>
+                <p>
+                    Kecepatan akhir pada GLBB dapat dihitung dengan rumus:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ v = v_0 + a t $$
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Hubungan v, s, dan a</h3>
+                <p>
+                    Hubungan antara kecepatan, jarak, dan percepatan tanpa variabel waktu:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ v^2 = v_0^2 + 2 a s $$
+                </div>
+            </article>
+        </section>
+
+        <section class="materi-section contoh-soal">
+            <h4><i class="icon-soal"></i> Contoh Soal</h4>
+
+            <div class="soal-item">
+                <p class="soal"><strong>Soal 1:</strong> Sebuah mobil bergerak dengan kecepatan tetap 60 km/jam. Berapa jarak yang ditempuh dalam 2 jam?</p>
+            </div>
+            <div class="penyelesaian-item">
+                <p><strong>Penyelesaian:</strong><br>
+                    Diketahui: v = 60 km/jam, t = 2 jam<br>
+                    Ditanya: s = ?<br>
+                    Jawab: s = v × t = 60 × 2 = 120 km
+                </p>
+            </div>
+
+            <div class="soal-item">
+                <p class="soal"><strong>Soal 2:</strong> Sebuah benda bergerak dengan kecepatan awal 10 m/s dan percepatan 2 m/s². Berapa kecepatan benda setelah 5 detik?</p>
+            </div>
+            <div class="penyelesaian-item">
+                <p><strong>Penyelesaian:</strong><br>
+                    Diketahui: v₀ = 10 m/s, a = 2 m/s², t = 5 s<br>
+                    Ditanya: v = ?<br>
+                    Jawab: v = v₀ + at = 10 + (2)(5) = 10 + 10 = 20 m/s
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="logoutModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <h3>Konfirmasi Logout</h3>
+            <p>Apakah Anda yakin ingin keluar?</p>
+            <div class="modal-buttons">
+                <button id="cancelLogout" class="btn-cancel">Batal</button>
+                <button id="confirmLogout" class="btn-confirm">Ya, Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+
+    </body>
+</html>

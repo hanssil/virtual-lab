@@ -1,0 +1,295 @@
+/* ======================================= */
+/* === STYLING BARU UNTUK KUIS (kuis-style.css) === */
+/* ======================================= */
+
+/* Wadah utama kuis, mirip .materi-section */
+.kuis-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 35px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e0e0e0;
+  max-width: 700px; /* Batasi lebar kuis agar fokus */
+  margin: 0 auto; /* Tengahkan di dalam .materi-main-container */
+}
+
+/* Header kuis (Info Pertanyaan & Skor) */
+.kuis-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+#info-pertanyaan {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.skor-badge {
+  background-color: #4a90e2;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Styling Pertanyaan */
+.pertanyaan-grup {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.pertanyaan-ikon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #eaf2f8;
+  color: #4a90e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+#pertanyaan-teks {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Container Pilihan Ganda */
+#pilihan-ganda-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Styling Tombol Pilihan Ganda */
+.pilihan-ganda {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border: 2px solid #dfe4ea;
+  border-radius: 10px;
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pilihan-label {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #adb5bd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  font-weight: 600;
+  color: #495057;
+  flex-shrink: 0;
+}
+
+.pilihan-teks {
+  color: #333;
+}
+
+/* State: Saat Pilihan di-hover */
+.pilihan-ganda:not(:disabled):hover {
+  border-color: #4a90e2;
+  background-color: #f4f8fc;
+}
+
+/* State: Saat Pilihan di-klik (Selected) */
+.pilihan-ganda.selected {
+  border-color: #4a90e2; /* Biru */
+  background-color: #eaf2f8;
+  box-shadow: 0 0 10px rgba(74, 144, 226, 0.2);
+}
+.pilihan-ganda.selected .pilihan-label {
+  border-color: #4a90e2;
+  background-color: #4a90e2;
+  color: white;
+}
+
+/* State: Setelah Submit - Jawaban Benar */
+.pilihan-ganda.correct {
+  border-color: #2ecc71; /* Hijau */
+  background-color: #e8f6ef;
+}
+.pilihan-ganda.correct .pilihan-label {
+  border-color: #2ecc71;
+  background-color: #2ecc71;
+  color: white;
+}
+.pilihan-ganda.correct::after {
+  content: '✔';
+  font-size: 20px;
+  color: #2ecc71;
+  margin-left: auto;
+}
+
+/* State: Setelah Submit - Jawaban Salah */
+.pilihan-ganda.incorrect {
+  border-color: #e74c3c; /* Merah */
+  background-color: #fdeded;
+}
+.pilihan-ganda.incorrect .pilihan-label {
+  border-color: #e74c3c;
+  background-color: #e74c3c;
+  color: white;
+}
+.pilihan-ganda.incorrect::after {
+  content: '✖';
+  font-size: 20px;
+  color: #e74c3c;
+  margin-left: auto;
+}
+
+/* State: Saat tombol pilihan di-disable (setelah submit) */
+.pilihan-ganda:disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.pilihan-ganda:disabled:not(.selected, .correct, .incorrect) {
+  opacity: 0.6;
+  background-color: #f8f9fa;
+}
+
+
+/* Box Penjelasan (Muncul setelah submit) */
+.penjelasan-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #4a90e2; /* Default biru */
+  background-color: #eaf2f8;
+}
+.penjelasan-box p {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #34495e;
+}
+.penjelasan-box #penjelasan-ikon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #4a90e2; /* Default biru */
+  color: white;
+}
+
+/* State Penjelasan: Jawaban Benar */
+.penjelasan-box.benar {
+  border-color: #2ecc71;
+  background-color: #e8f6ef;
+}
+.penjelasan-box.benar #penjelasan-ikon {
+  background-color: #2ecc71;
+  content: '✔'; /* JS akan ganti ini */
+}
+
+/* Tombol Aksi (Submit/Next) */
+.kuis-footer {
+  margin-top: 30px;
+}
+.kuis-button-submit {
+  width: 100%;
+  padding: 16px;
+  background-color: #212529; /* Hitam (sesuai mockup) */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.kuis-button-submit:hover {
+  background-color: #343a40;
+}
+
+
+/* ======================================= */
+/* === STYLING HALAMAN HASIL KUIS === */
+/* ======================================= */
+.hasil-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 25px;
+  text-align: center;
+}
+.hasil-ikon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+.hasil-skor {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.hasil-persen {
+  font-size: 18px;
+  color: #7f8c8d;
+  margin-bottom: 25px;
+}
+
+.hasil-feedback-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 25px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+/* Warna-warna badge (diatur oleh JS) */
+.feedback-luar-biasa { background-color: #2ecc71; color: white; } /* 5/5 */
+.feedback-bagus { background-color: #4a90e2; color: white; } /* 4/5 */
+.feedback-cukup { background-color: #f1c40f; color: #333; } /* 3/5 */
+.feedback-kurang { background-color: #e74c3c; color: white; } /* 2/5, 1/5 */
+
+/* Tombol Ulangi Kuis */
+#ulang-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #212529;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#ulang-button:hover {
+  background-color: #343a40;
+}

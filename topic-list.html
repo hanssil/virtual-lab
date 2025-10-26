@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pilih Topik - Virtual Lab Fisika</title> 
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="logo">Virtual Lab Fisika</div>
+    <div class="user-info">
+      <span id="userEmail" style="margin-right: 15px; color: #555;"></span>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </div>
+  </header>
+
+  <nav class="secondary-nav">
+    <a href="index.html" class="back-link">&larr; Dashboard</a>
+    <span class="page-title">Pilih Topik</span> 
+  </nav>
+
+  <main class="topic-list-main">
+    <h1 id="topic-list-title">Pilih Topik Pembelajaran</h1> 
+    <p id="topic-list-subtitle">Pilih salah satu topik di bawah ini</p>
+
+    <div class="topic-cards-container">
+        <a href="#" class="topic-card"> <h2>Gerak Lurus</h2> <p class="topic-subtitle">GLB dan GLBB</p>
+            <p class="topic-description">
+            Pelajari tentang Gerak Lurus Beraturan (GLB) dan Gerak Lurus Berubah Beraturan (GLBB).
+            </p>
+            <div class="pilih-topic-button">Pilih Topik &rarr;</div>
+        </a>
+
+        <a href="#" class="topic-card"> <h2>Gerak Parabola</h2> <p class="topic-subtitle">Gerak Proyektil</p>
+            <p class="topic-description">
+            Pelajari tentang gerak parabola atau gerak proyektil dua dimensi.
+            </p>
+            <div class="pilih-topic-button">Pilih Topik &rarr;</div>
+        </a>
+
+        <a href="#" class="topic-card"> <h2>Pegas</h2> <p class="topic-subtitle">Hukum Hooke dan Getaran Harmonis</p>
+            <p class="topic-description">
+            Pelajari tentang sifat pegas, Hukum Hooke, dan getaran harmonis sederhana.
+            </p>
+            <div class="pilih-topic-button">Pilih Topik &rarr;</div>
+        </a>
+
+        </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Virtual Lab Fisika Interaktif</p>
+  </footer>
+
+  <div id="logoutModal" class="modal-overlay" style="display: none;">
+    <div class="modal-box">
+      <h3>Konfirmasi Logout</h3>
+      <p>Apakah Anda yakin ingin keluar?</p>
+      <div class="modal-buttons">
+        <button id="cancelLogout" class="btn-cancel">Batal</button>
+        <button id="confirmLogout" class="btn-confirm">Ya, Logout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/main.js"></script>
+
+  <script src="js/topic-list.js"></script> 
+</body>
+</html>

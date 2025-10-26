@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi: Pegas - Virtual Lab Fisika</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Virtual Lab Fisika</div>
+        <div class="user-info">
+          <span id="userEmail" style="margin-right: 15px; color: #555;"></span>
+          <button id="logoutButton" class="logout-button">Logout</button>
+        </div>
+    </header>
+
+    <nav class="secondary-nav">
+        <a href="topic-list.html?fitur=materi" class="back-link">&larr; Pilih Topik Lain</a>
+        <span class="page-title">Materi Pembelajaran / Pegas</span> </nav>
+
+    <main class="materi-main-container">
+
+        <section class="materi-section pengantar">
+            <h4><i class="icon-placeholder"></i> Pengantar</h4>
+            <p>
+                Pegas adalah benda elastis yang dapat kembali ke bentuk semula setelah diberikan gaya. Pegas memiliki konstanta pegas (k) yang menunjukkan kekakuan pegas tersebut.
+            </p>
+        </section>
+
+        <section class="materi-section konsep-utama">
+            <h4><i class="icon-placeholder"></i> Konsep Utama</h4>
+
+            <article class="sub-seksi">
+                <h3>Hukum Hooke</h3>
+                <p>
+                    Gaya yang bekerja pada pegas berbanding lurus dengan pertambahan panjang pegas:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ F = k \times \Delta x $$
+                    <small>Keterangan: F = gaya pegas, k = konstanta pegas, \( \Delta x \) = pertambahan panjang</small>
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Energi Potensial Pegas</h3>
+                <p>
+                    Energi yang tersimpan pada pegas yang teregang atau tertekan:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ E_p = \frac{1}{2} k x^2 $$
+                    <small>Keterangan: \( E_p \) = energi potensial pegas, k = konstanta pegas, x = simpangan (perubahan panjang dari posisi setimbang)</small>
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Periode Getaran</h3>
+                <p>
+                    Waktu yang diperlukan untuk satu getaran penuh:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ T = 2\pi \sqrt{\frac{m}{k}} $$
+                    <small>Keterangan: T = periode, m = massa beban, k = konstanta pegas</small>
+                </div>
+            </article>
+
+            <article class="sub-seksi">
+                <h3>Frekuensi Getaran</h3>
+                <p>
+                    Banyaknya getaran per satuan waktu:
+                </p>
+                <div class="rumus-box">
+                    Rumus:<br>
+                    $$ f = \frac{1}{T} = \frac{1}{2\pi} \sqrt{\frac{k}{m}} $$
+                    <small>Keterangan: f = frekuensi, T = periode, m = massa beban, k = konstanta pegas</small>
+                </div>
+            </article>
+        </section>
+
+        <section class="materi-section contoh-soal">
+            <h4><i class="icon-placeholder"></i> Contoh Soal</h4>
+
+            <div class="soal-item">
+                <p class="soal"><strong>Soal 1:</strong> Sebuah pegas dengan konstanta 200 N/m ditarik sejauh 5 cm. Berapa gaya yang bekerja?</p>
+            </div>
+            <div class="penyelesaian-item">
+                <p><strong>Penyelesaian:</strong><br>
+                    Diketahui: \( k = 200 \) N/m, \( \Delta x = 5 \) cm = \( 0.05 \) m<br>
+                    Ditanya: \( F = ? \)<br>
+                    Jawab: \( F = k \times \Delta x = 200 \times 0.05 = 10 \) N
+                </p>
+            </div>
+
+            <div class="soal-item">
+                <p class="soal"><strong>Soal 2:</strong> Massa 2 kg digantung pada pegas dengan k = 100 N/m. Berapa periode getarannya?</p>
+            </div>
+            <div class="penyelesaian-item">
+                <p><strong>Penyelesaian:</strong><br>
+                    Diketahui: \( m = 2 \) kg, \( k = 100 \) N/m<br>
+                    Ditanya: \( T = ? \)<br>
+                    Jawab: \( T = 2\pi \sqrt{\frac{m}{k}} = 2\pi \sqrt{\frac{2}{100}} = 2\pi \sqrt{0.02} \approx 2 \times 3.14 \times 0.141 \approx 0.89 \) s
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="logoutModal" class="modal-overlay" style="display: none;">
+        <div class="modal-box">
+            <h3>Konfirmasi Logout</h3>
+            <p>Apakah Anda yakin ingin keluar?</p>
+            <div class="modal-buttons">
+                <button id="cancelLogout" class="btn-cancel">Batal</button>
+                <button id="confirmLogout" class="btn-confirm">Ya, Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

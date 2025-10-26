@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Virtual Lab Fisika</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-page">
+  <main>
+    <div class="login-container">
+      
+      <img src="logo.jpg" alt="Logo Virtual Lab" class="login-logo">
+      
+      <h1>Virtual Lab Fisika</h1>
+      <p class="login-subtitle">Masuk untuk memulai pembelajaran</p>
+      
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Masukkan email Anda">
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Masukkan password">
+        </div>
+        
+        <!-- Pesan Error -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+        
+        <button type="submit" class="login-button">
+          <span>&rarr;</span> Masuk
+        </button>
+      </form>
+      
+      <p class="demo-text">
+        Belum punya akun? <a href="signup.html" class="back-link">Daftar di sini</a>
+      </p>
+    </div>
+  </main>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,1105 @@
+/* ======================================= */
+/* === PENGATURAN DASAR HALAMAN === */
+/* ======================================= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font lebih modern */
+  margin: 0;
+  background-color: #f8f9fa; /* Warna latar sedikit abu */
+  color: #333;
+}
+
+/* ======================================= */
+/* === HEADER BARU === */
+/* ======================================= */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #ffffff; /* Latar putih */
+  border-bottom: 1px solid #e0e0e0; /* Garis bawah tipis */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 600; /* Sedikit lebih tebal */
+  color: #2c3e50;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Jarak antar elemen user info */
+}
+
+/* Anda bisa menghapus .user-avatar dan .username jika tidak dipakai */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #4a90e2; /* Warna biru untuk avatar */
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.username {
+  font-weight: 500;
+}
+
+.logout-button {
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none; /* Hapus border default button */
+  cursor: pointer; /* Tampilkan pointer cursor */
+  font-size: 14px; /* Ukuran font */
+  transition: background-color 0.2s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+}
+
+/* ======================================= */
+/* === DASHBOARD / HALAMAN UTAMA (INDEX.HTML) === */
+/* ======================================= */
+.dashboard-main {
+  max-width: 1200px; /* Batasi lebar konten agar tidak terlalu lebar di layar besar */
+  margin: 40px auto; /* Menengahkan konten */
+  padding: 0 20px; /* Jarak dari sisi layar */
+}
+
+/* Pesan Selamat Datang */
+.welcome-message {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.welcome-message h1 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.welcome-message p {
+  font-size: 18px;
+  color: #7f8c8d;
+}
+
+/* Wadah untuk 3 Card Fitur */
+.feature-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feature-card {
+  flex: 1; /* Membuat ketiga card punya lebar sama */
+  max-width: 350px; /* Batas lebar card */
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  text-decoration: none; /* Hapus garis bawah link */
+  color: inherit; /* Warna teks ikut parent */
+  border: 1px solid transparent; /* Border awal transparan */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.03); /* Sedikit naik dan membesar */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  /* Beri warna border saat hover */
+  border-color: #e0e0e0;
+}
+/* Warna border spesifik saat hover */
+.card-materi:hover { border-color: #85c1e9; }
+.card-kuis:hover { border-color: #bb8fce; }
+.card-lab:hover { border-color: #7dcea0; }
+
+.card-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-icon img {
+  width: 40px; /* Ukuran ikon di dalam lingkaran */
+  height: 40px;
+}
+/* Warna latar ikon */
+.card-materi .card-icon { background-color: #eaf2f8; } /* Biru muda */
+.card-kuis .card-icon { background-color: #f4ecf7; } /* Ungu muda */
+.card-lab .card-icon { background-color: #e8f6ef; } /* Hijau muda */
+
+.feature-card h2 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 15px;
+  color: #7f8c8d;
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.card-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px; /* Bentuk pil */
+  font-size: 13px;
+  font-weight: 500;
+}
+/* Warna badge */
+.card-materi .card-badge { background-color: #d6eaf8; color: #3498db; }
+.card-kuis .card-badge { background-color: #eadcee; color: #a569bd; }
+.card-lab .card-badge { background-color: #d4efdf; color: #2ecc71; }
+
+
+/* Seksi Topik Tersedia */
+.topics-section {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  margin-top: 50px;
+}
+
+.topics-section h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.topics-list {
+  display: grid;
+  /* === PERUBAHAN DI SINI === */
+  grid-template-columns: repeat(3, 1fr); /* 3 kolom sama lebar */
+  gap: 20px;
+}
+
+.topic-item {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+}
+
+.topic-item span { /* Lingkaran nomor */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  color: #495057;
+  font-weight: bold;
+  margin-right: 15px;
+}
+
+.topic-item small { /* Sub-judul topik */
+  display: block;
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-top: 3px;
+}
+
+/* === HAPUS SEMUA CSS UNTUK MODAL LAMA === */
+/* Tidak perlu ada kode di sini lagi */
+
+
+/* === FOOTER (Opsional) === */
+/* Anda bisa menghapus blok footer ini jika tidak diperlukan */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #ffffff;
+  color: #7f8c8d;
+  margin-top: 50px;
+  border-top: 1px solid #e0e0e0;
+}
+
+
+/* ======================================= */
+/* === STYLING UNTUK HALAMAN LAB (lab.html) === */
+/* ======================================= */
+.lab-container {
+  display: flex;
+  gap: 30px;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.controls {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 30px; /* Perbesar padding */
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 700px;
+  box-sizing: border-box;
+}
+.controls h2 { /* Styling judul panel */
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+}
+
+.simulation-area {
+  flex: 2;
+  border-radius: 16px;
+  background-image: url('../gambar/jalan.png');
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  height: 700px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.input-group {
+  margin-bottom: 30px; /* Jarak lebih besar */
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500; /* Sedikit lebih tipis */
+  font-size: 15px;
+}
+
+/* Styling slider agar lebih modern */
+input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+  height: 8px;
+  background: #e9ecef;
+  border-radius: 5px;
+  outline: none;
+  -webkit-appearance: none; /* Hapus tampilan default */
+  appearance: none;
+}
+/* Styling thumb (bulatan slider) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #4a90e2; /* Warna biru */
+  border-radius: 50%;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #4a90e2;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+
+.tombol-group {
+  display: flex;
+  gap: 15px; /* Jarak lebih besar */
+  margin-top: 40px; /* Jarak dari slider */
+}
+
+.tombol-group button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px; /* Lebih bulat */
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#start-button {
+  background-color: #2ecc71; /* Hijau lebih cerah */
+  color: white;
+}
+#start-button:hover { background-color: #27ae60; }
+
+#reset-button {
+  background-color: #e74c3c;
+  color: white;
+}
+#reset-button:hover { background-color: #c0392b; }
+
+/* Styling Tombol Stop */
+#stop-button {
+  background-color: #e74c3c; /* Warna merah */
+  color: white;
+}
+#stop-button:hover {
+  background-color: #c0392b;
+}
+
+/* Styling Tombol Pause */
+#pause-button {
+  background-color: #f39c12; /* Warna kuning/oranye */
+  color: white;
+}
+#pause-button:hover {
+  background-color: #e67e22;
+}
+
+/* Styling Tombol Resume */
+#resume-button {
+  background-color: #2ecc71; /* Hijau seperti Start */
+  color: white;
+}
+#resume-button:hover {
+  background-color: #27ae60;
+}
+
+/* Sembunyikan tombol secara default */
+#stop-button,
+#pause-button,
+#resume-button {
+  display: none;
+}
+
+/* Atur ulang flex agar tombol reset tidak melebar saat stop muncul */
+.tombol-group button {
+    /* Hapus flex: 1; jika ada, atau atur seperti ini */
+    padding: 12px 20px; /* Beri padding agar ukurannya konsisten */
+    flex-grow: 0; /* Jangan biarkan tombol membesar */
+}
+/* Tombol start/stop bisa dibuat sedikit lebih lebar jika mau */
+#start-button, #stop-button {
+    flex-grow: 1; /* Biarkan tombol start/stop mengisi ruang */
+}
+
+
+/* ======================================= */
+/* === STYLING HALAMAN LOGIN (login.html) === */
+/* ======================================= */
+body.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f9f9f9, #e6e9f0);
+}
+
+.login-container {
+  width: 420px;
+  padding: 40px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.login-logo {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.login-container h1 {
+  color: #2c3e50;
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.login-subtitle {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #34495e;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #dfe4ea;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.form-group input::placeholder {
+  color: #adb5bd;
+}
+
+.login-button {
+  width: 100%;
+  padding: 14px;
+  background-color: #212529;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  box-sizing: border-box;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #343a40;
+}
+
+.login-button span {
+  margin-right: 8px;
+}
+
+.demo-text {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #909090;
+}
+
+.demo-text .back-link {
+  color: #4a90e2;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.demo-text .back-link:hover {
+  color: #357abd;
+  text-decoration: underline;
+}
+
+
+/* ======================================= */
+/* === HALAMAN DAFTAR TOPIK (topic-list.html) === */
+/* ======================================= */
+.secondary-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #4a90e2; /* Biru */
+  font-weight: 500;
+}
+
+.page-title {
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.topic-list-main {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.topic-list-main h1 {
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+.topic-list-main p { /* Subtitle di bawah H1 */
+  color: #7f8c8d;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.topic-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.topic-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.topic-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.topic-card h2 {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #2c3e50;
+}
+
+.topic-card .topic-subtitle {
+  font-size: 14px;
+  color: #7f8c8d;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.topic-card .topic-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 25px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.pilih-topic-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 1px solid #4a90e2;
+  color: #4a90e2;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.topic-card:hover .pilih-topic-button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+
+
+/* ======================================= */
+/* === HALAMAN LAB VIRTUAL BARU (lab.html) === */
+/* ======================================= */
+
+/* Wadah utama untuk 2 kolom */
+.lab-main-container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+  max-width: 1400px; /* Lebih lebar */
+  margin: 20px auto;
+}
+
+/* Pengaturan Kolom */
+.lab-column {
+  display: flex;
+  flex-direction: column; /* Kartu di dalam kolom tersusun vertikal */
+  gap: 30px;
+}
+.lab-column-left { flex: 1; } /* Kolom kiri lebih kecil */
+.lab-column-right { flex: 2; } /* Kolom kanan lebih besar */
+
+/* Styling Kartu Umum */
+.lab-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+.lab-card h2 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 18px; /* Judul kartu lebih kecil */
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+/* Kartu Parameter */
+.parameter-card .input-group { margin-bottom: 20px; }
+.parameter-card label { font-size: 14px; margin-bottom: 8px; }
+.parameter-card .tombol-group { margin-top: 30px; }
+.parameter-card #start-button { font-weight: 600; }
+.parameter-card #reset-button { background: #f0f0f0; color: #555; border: 1px solid #ddd; }
+.parameter-card #reset-button:hover { background: #e0e0e0; }
+
+/* Kartu Waktu Simulasi */
+.time-card {
+  background-color: #eaf2f8; /* Latar biru muda */
+  text-align: center;
+}
+.time-card label {
+  display: block;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+#simulation-time {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4a90e2; /* Biru */
+}
+
+/* Kartu Visualisasi */
+.visualization-card {
+  min-height: 350px; /* Beri tinggi minimal */
+  display: flex;
+  flex-direction: column;
+}
+.visualization-area {
+  flex-grow: 1; /* Biarkan area visualisasi mengisi sisa ruang kartu */
+  background-color: #f8f9fa; /* Latar area visualisasi */
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Untuk posisi elemen di dalamnya */
+  overflow: hidden;
+}
+
+/* Kartu Hasil Perhitungan */
+.results-card { min-height: 200px; }
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dua kolom hasil */
+  gap: 15px 25px; /* Jarak baris dan kolom */
+}
+.result-item {
+  font-size: 14px;
+}
+.result-item label {
+  display: block;
+  color: #7f8c8d;
+  margin-bottom: 3px;
+}
+.result-item span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* --- Styling Spesifik untuk Visualisasi Gerak Lurus --- */
+.track-horizontal {
+  width: 90%;
+  height: 8px; /* Lintasan lebih tipis */
+  background-color: #dfe4ea;
+  border-radius: 4px;
+  position: relative;
+}
+.dot { /* Ganti .car menjadi .dot */
+  width: 24px; /* Objek jadi lingkaran */
+  height: 24px;
+  background-color: #4a90e2; /* Biru */
+  border-radius: 50%; /* Bulat sempurna */
+  border: 3px solid white;
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+  position: absolute;
+  top: 50%; /* Tengahkan vertikal */
+  transform: translateY(-50%); /* Koreksi centering vertikal */
+  left: 10px; /* Posisi awal */
+  transition: left 0.1s linear;
+}
+
+
+
+/* ======================================= */
+/* === STYLING KHUSUS LAB PARABOLA === */
+/* ======================================= */
+
+/* Latar belakang area visualisasi parabola */
+.parabola-bg {
+  background: linear-gradient(to bottom, #ADD8E6, #f8f9fa 70%); /* Gradasi langit ke tanah */
+  align-items: flex-end; /* Posisikan elemen (meriam, bola) di bawah */
+  justify-content: flex-start; /* Posisikan elemen di kiri */
+}
+
+/* Styling Meriam */
+#cannon {
+  width: 50px;
+  height: 25px;
+  background-color: #555;
+  border-radius: 5px 5px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  /* Kita akan memutar meriam dengan JS nanti */
+  transform-origin: bottom left; /* Titik putar di kiri bawah */
+  transition: transform 0.2s;
+}
+
+/* Styling Proyektil (bola) */
+.projectile { /* Menggantikan .dot */
+  width: 20px;
+  height: 20px;
+  background-color: #e74c3c; /* Merah */
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 5px rgba(231, 76, 60, 0.5);
+  position: absolute;
+  /* Posisi awal akan diatur oleh JS */
+  bottom: 20px; 
+  left: 30px; 
+  /* Hapus transisi left agar bisa atur x dan y */
+  /* transition: left 0.1s linear; */ 
+}
+
+
+/* ======================================= */
+/* === STYLING KHUSUS LAB PEGAS === */
+/* ======================================= */
+
+/* Latar area visualisasi pegas */
+.pegas-bg {
+  background-color: #f8f9fa; /* Latar abu-abu muda */
+  align-items: flex-start; /* Elemen mulai dari atas */
+  /* Naikkan padding atas agar langit-langit lebih tinggi */
+  padding-top: 30px; 
+  justify-content: center; /* Tengahkan secara horizontal */
+}
+
+/* Langit-langit (naikkan posisinya) */
+#ceiling {
+  position: absolute;
+  top: 30px; /* Sesuaikan dengan padding-top .pegas-bg */
+  left: 10%;
+  right: 10%;
+  height: 10px;
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Pegas (naikkan posisinya) */
+#spring {
+  width: 20px;
+  height: 100px; /* Tinggi awal pegas */
+  border: 2px solid #333;
+  border-top: none;
+  position: absolute;
+  top: 40px; /* Di bawah ceiling baru */
+  left: 50%;
+  transform: translateX(-50%);
+  background: repeating-linear-gradient(
+    45deg,
+    #ccc,
+    #ccc 2px,
+    #fff 2px,
+    #fff 4px
+  );
+  transition: height 0.05s linear;
+}
+
+/* Massa (posisi awal akan diatur JS) */
+#mass {
+  width: 60px;
+  height: 60px;
+  background-color: #4a90e2;
+  border-radius: 8px;
+  position: absolute;
+  left: 50%;
+  /* Hapus 'top' statis dari sini, biarkan JS yg mengatur */
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: top 0.05s linear;
+}
+
+#mass-label {
+    font-size: 12px;
+}
+
+/* Garis Posisi Setimbang (posisi akan diatur JS) */
+#equilibrium-line {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background-color: #e74c3c;
+  /* Hapus 'top' statis dari sini */
+  transition: top 0.1s linear;
+}
+
+/* Tinggikan juga Kartu Visualisasi secara keseluruhan */
+.visualization-card {
+  min-height: 450px; /* Tinggikan dari 350px */
+  display: flex;
+  flex-direction: column;
+}
+.visualization-area {
+  flex-grow: 1; 
+  background-color: #f8f9fa; 
+  border-radius: 8px;
+  display: flex;
+  /* Hapus justify-content & align-items dari sini agar .pegas-bg yg mengatur */
+  position: relative; 
+  overflow: hidden;
+}
+
+
+/* ======================================= */
+/* === STYLING HALAMAN MATERI (materi-glb.html, dll.) === */
+/* ======================================= */
+
+/* Wadah utama konten materi */
+.materi-main-container {
+  max-width: 900px; /* Batasi lebar agar nyaman dibaca */
+  margin: 30px auto; /* Tengahkan di halaman */
+  padding: 0 20px;
+}
+
+/* Styling umum untuk setiap seksi */
+.materi-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+}
+
+/* Styling judul seksi (Pengantar, Konsep Utama, Contoh Soal) */
+.materi-section h4 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #555;
+  display: flex; /* Agar ikon dan teks sejajar */
+  align-items: center;
+  gap: 8px; /* Jarak ikon dan teks */
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+/* Placeholder Ikon (Ganti nanti dengan ikon asli) */
+.materi-section h4 i {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #eee; /* Warna placeholder */
+  border-radius: 4px;
+}
+
+/* Styling sub-seksi di dalam Konsep Utama */
+.sub-seksi {
+  background-color: #f8f9fa; /* Latar sedikit abu */
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+.sub-seksi h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #2c3e50;
+}
+.sub-seksi p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Styling kotak rumus */
+.rumus-box {
+  background-color: #eaf2f8; /* Latar biru muda */
+  border-radius: 6px;
+  padding: 15px;
+  font-family: 'Courier New', Courier, monospace; /* Font monospace untuk rumus */
+  border: 1px dashed #c1d9ec;
+  color: #333;
+}
+/* Styling MathJax (otomatis oleh library) */
+.mjx-chtml {
+  font-size: 1.1em !important; /* Sedikit perbesar rumus */
+}
+
+/* Styling seksi Contoh Soal */
+.soal-item {
+  background-color: #fef9e7; /* Latar kuning muda untuk soal */
+  border-radius: 8px 8px 0 0; /* Bulat hanya di atas */
+  padding: 15px 20px;
+  margin-top: 20px;
+  border: 1px solid #fdebd0;
+  border-bottom: none; /* Hilangkan border bawah */
+}
+.soal-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.penyelesaian-item {
+  background-color: #e8f6ef; /* Latar hijau muda untuk jawaban */
+  border-radius: 0 0 8px 8px; /* Bulat hanya di bawah */
+  padding: 15px 20px;
+  border: 1px solid #d4efdf;
+  border-top: none; /* Hilangkan border atas */
+  margin-bottom: 20px;
+}
+.penyelesaian-item p {
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ======================================= */
+/* === STYLING PESAN ERROR LOGIN === */
+/* ======================================= */
+.error-message {
+  background-color: #fee;
+  color: #c33;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #fcc;
+  font-size: 14px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Animasi Shake untuk Form */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+
+/* ======================================= */
+/* === MODAL KONFIRMASI LOGOUT === */
+/* ======================================= */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap transparan */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-box {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2c3e50;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.modal-box p {
+  margin-bottom: 25px;
+  color: #555;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.modal-buttons button {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel {
+  background-color: #f0f0f0;
+  color: #555;
+  border: 1px solid #ddd;
+}
+
+.btn-cancel:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-confirm {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-confirm:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.3);
+}
