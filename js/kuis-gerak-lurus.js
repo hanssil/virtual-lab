@@ -91,8 +91,8 @@ function initKuis() {
     const hasilFeedbackEmoji = document.getElementById('hasil-feedback-emoji');
 
     // konfigurasi API sederhana
-    const API_BASE = window.API_BASE || 'http://localhost:3000';
-    const API_URL = `${API_BASE}/api`;
+    const API_BASE = (typeof window.API_BASE !== 'undefined' && window.API_BASE !== null) ? window.API_BASE : 'http://localhost:3000';
+    const API_URL = API_BASE === '' ? '/api' : `${API_BASE}/api`;
 
     async function getAuthHeaders() {
         const user = auth.currentUser;
